@@ -1,0 +1,12 @@
+# Automatically fix Prettier issues
+# echo 'Running Prettier to fix formatting issues...'
+# npm run format || { echo 'Prettier formatting failed. Please check manually.'; exit 1; }
+
+
+# Check ESLint standards
+echo 'Running ESLint to check for issues...'
+npm run lint || { echo 'ESLint check failed. Please fix issues and try again.'; exit 1; }
+
+# Check TypeScript types
+echo 'Running TypeScript checks...'
+npm run check-types || { echo 'TypeScript check failed. Please fix issues and try again.'; exit 1; }
