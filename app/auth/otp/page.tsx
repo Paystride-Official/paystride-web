@@ -103,7 +103,7 @@ export default function Otp() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-200 to-purple-400 p-4">
-      <div className="w-full max-w-[600px] bg-white rounded-2xl shadow-lg p-8">
+      <div className="w-full max-w-[600px] bg-white rounded-[20px] shadow-lg p-8">
         <button
           onClick={() => window.history.back()}
           className="flex items-center text-gray-600 hover:text-gray-900 "
