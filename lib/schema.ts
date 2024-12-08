@@ -15,7 +15,7 @@ export const signupSchema = z.object({
     .regex(/[a-z]/, 'Password must contain at least one lowercase letter')
     .regex(/[0-9]/, 'Password must contain at least one number'),
   referralSource: z.string().optional(),
-  termsAccepted: z.boolean().refine((val) => val === true, {
+  termsAccepted: z.boolean().refine((val: boolean) => val === true, {
     message: 'You must accept the terms and policies',
   }),
 });
