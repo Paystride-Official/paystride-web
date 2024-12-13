@@ -7,11 +7,11 @@ import Refresh from '@/components/DataTable/Refresh/Refresh';
 import FilterBtn from '@/components/DataTable/Filter/Filter';
 import Export from '@/components/DataTable/Export/Export';
 import SearchBar from '@/components/DataTable/Search/Search';
+import { DatePicker } from '@/components/DataTable/DatePicker/DatePicker';
 
 const Sales = () => {
   return (
     <div className="py-[52px]">
-      <p>Sales</p>
       <div className="flex flex-col gap-6">
         <div className="flex flex-col lg:flex-row gap-6">
           <div className="bg-white py-6 px-5 gap-1 flex items-center justify-between border border-[#CBD5E1] rounded-[10px] flex-[1]">
@@ -64,10 +64,12 @@ const Sales = () => {
           </div>
         </div>
         <div className="bg-white border border-[#CBD5E1] rounded-[10px] p-5 flex flex-col gap-5">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-5 max-w-[15rem] min-w-full overflow-auto ">
+            <DatePicker />
             <SearchBar />
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               <Refresh />
+
               <FilterBtn />
             </div>
             <Export />
