@@ -34,9 +34,9 @@ export default function SignupForm() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-200 to-purple-400 p-4">
-      <div className="w-full max-w-[572px] bg-white rounded-[20px] shadow-lg px-6 md:px-20 py-6">
-        <div className="flex justify-center ">
+    <div className="min-h-screen flex items-center justify-center bg-custom  py-8">
+      <div className="w-full max-w-[600px] bg-[#F8F8F8] rounded-[20px] shadow-lg px-6 md:px-20  py-16 ">
+        <div className="flex justify-center">
           <Image src={Paystride} alt="Logo" width={35} height={70} />
         </div>
 
@@ -48,7 +48,7 @@ export default function SignupForm() {
           <div>
             <label
               htmlFor="businessName"
-              className="block text-sm font-medium text-neutral-600"
+              className="block text-sm font-semibold text-neutral-600"
             >
               Business Name
             </label>
@@ -56,7 +56,7 @@ export default function SignupForm() {
               {...register('businessName')}
               type="text"
               id="businessName"
-              className="mt-1 block w-full px-3 py-1 text-sm border border-neutral-400 text-neutral-900 rounded-[8px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full h-[44px] px-3 py-1 text-sm border border-neutral-400 text-neutral-900 rounded-[8px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               placeholder="Enter Business Name"
             />
             {errors.businessName && (
@@ -69,7 +69,7 @@ export default function SignupForm() {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-neutral-600"
+              className="block text-sm font-semibold text-neutral-600"
             >
               Email
             </label>
@@ -77,7 +77,7 @@ export default function SignupForm() {
               {...register('email')}
               type="email"
               id="email"
-              className="mt-1 block w-full px-3 py-1 text-sm border border-neutral-400 text-neutral-900 rounded-[8px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full h-[44px] px-3 py-1 text-sm border border-neutral-400 text-neutral-900 rounded-[8px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               placeholder="Enter Email Address"
             />
             {errors.email && (
@@ -90,7 +90,7 @@ export default function SignupForm() {
           <div>
             <label
               htmlFor="phoneNumber"
-              className="block text-sm font-medium text-neutral-600"
+              className="block text-sm font-semibold text-neutral-600"
             >
               Phone Number
             </label>
@@ -98,7 +98,7 @@ export default function SignupForm() {
               {...register('phoneNumber')}
               type="tel"
               id="phoneNumber"
-              className="mt-1 block w-full px-3 py-1 text-sm border border-neutral-400 text-neutral-900 rounded-[8px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full h-[44px] px-3 py-1 text-sm border border-neutral-400 text-neutral-900 rounded-[8px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               placeholder="Enter Phone Number"
             />
             {errors.phoneNumber && (
@@ -111,7 +111,7 @@ export default function SignupForm() {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-neutral-600"
+              className="block text-sm font-semibold text-neutral-600"
             >
               Password
             </label>
@@ -120,7 +120,7 @@ export default function SignupForm() {
                 {...register('password')}
                 type={showPassword ? 'text' : 'password'}
                 id="password"
-                className="mt-1 block w-full px-3 py-1 text-sm border border-neutral-400 text-neutral-900 rounded-[8px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full h-[44px] px-3 py-1 text-sm border border-neutral-400 text-neutral-900 rounded-[8px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Enter Password"
               />
               <button
@@ -141,19 +141,19 @@ export default function SignupForm() {
           <div>
             <label
               htmlFor="referralSource"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-semibold text-gray-700"
             >
               How did you hear about us? (Optional)
             </label>
             <select
               {...register('referralSource')}
               id="referralSource"
-              className="mt-1 block w-full px-3 py-1 text-sm border border-neutral-400 text-neutral-900 rounded-[8px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full h-[44px] px-3 py-1 text-sm border border-neutral-400 text-neutral-900 rounded-[8px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
             >
               <option value="">Select Option</option>
-              <option value="search">Search Engine</option>
               <option value="social">Social Media</option>
-              <option value="referral">Referral</option>
+              <option value="referral">Outdoor Billboard</option>
+              <option value="referral">Fiends/Family</option>
               <option value="other">Other</option>
             </select>
           </div>
@@ -163,18 +163,18 @@ export default function SignupForm() {
               {...register('termsAccepted')}
               type="checkbox"
               id="termsAccepted"
-              className="h-4 w-4 text-blue-600 accent-[#091F8E] focus:ring-blue-500 border-neutral-400 rounded-[8px]"
+              className="h-[44px] w-4 text-blue-600 accent-[#091F8E] focus:ring-blue-500 border-neutral-400 rounded-[8px]"
             />
             <label
               htmlFor="termsAccepted"
-              className="ml-2 block text-sm text-gray-700"
+              className="ml-2 mt-3 block text-sm text-gray-700"
             >
               By checking, you have agreed to our{' '}
-              <Link href="/terms" className="text-blue-600 hover:underline">
+              <Link href="/terms" className="text-[#091F8E] hover:underline">
                 Terms of Service
-              </Link>{' '}
-              and{' '}
-              <Link href="/policies" className="text-blue-600 hover:underline">
+              </Link>
+              <span className="mx-1">and</span>
+              <Link href="/policies" className="text-[#091F8E] hover:underline">
                 Policies
               </Link>
             </label>
@@ -188,15 +188,18 @@ export default function SignupForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-[8px] shadow-sm text-sm font-medium text-white bg-[#091F8E] hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
+            className="w-[50%] m-auto flex justify-center  hover:bg-[#091F8E] hover:text-[#F8F8F8] py-2 px-4 border border-transparent rounded-[8px] shadow-sm text-sm font-medium    text-[#94A3B8] bg-[#F1F5F9] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
           >
             {isSubmitting ? 'Processing...' : 'Continue'}
           </button>
         </form>
 
         <p className="mt-2 text-center text-sm text-gray-600">
-          Already have an account?{' '}
-          <Link href="/auth/login" className="text-blue-600 hover:underline">
+          Already have an account?
+          <Link
+            href="/auth/login"
+            className="text-[#091F8E] hover:underline ml-1 font-semibold"
+          >
             Sign In
           </Link>
         </p>

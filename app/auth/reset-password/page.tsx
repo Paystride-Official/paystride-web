@@ -32,8 +32,8 @@ export default function ResetPassword() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-200 to-purple-400 p-4">
-      <div className="w-full max-w-[572px] bg-white rounded-[20px] shadow-lg px-6 md:px-20 py-12">
+    <div className="min-h-screen flex items-center justify-center bg-custom">
+      <div className="w-full max-w-[572px] h-[500px] bg-[#F1F5F9] rounded-[20px] shadow-lg px-6 md:px-20 pt-20">
         <div className="flex justify-center ">
           <Image src={Paystride} alt="Logo" width={30} height={50} />
         </div>
@@ -42,11 +42,11 @@ export default function ResetPassword() {
           Reset your password
         </h1>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 ">
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-neutral-600"
+              className="block text-sm font-semibold text-neutral-600"
             >
               Password
             </label>
@@ -54,7 +54,7 @@ export default function ResetPassword() {
               {...register('email')}
               type="email"
               id="email"
-              className="mt-1 block w-full px-3 py-1.5 text-sm border border-neutral-400 text-neutral-900 rounded-[8px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full h-[44px] px-3 py-1.5 text-sm border border-neutral-400 text-neutral-900 rounded-[8px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               placeholder="Enter Password"
             />
             {errors.email && (
@@ -67,7 +67,7 @@ export default function ResetPassword() {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-neutral-600"
+              className="block text-sm font-semibold text-neutral-600"
             >
               Confirm Password
             </label>
@@ -76,7 +76,7 @@ export default function ResetPassword() {
                 {...register('password')}
                 type={showPassword ? 'text' : 'password'}
                 id="password"
-                className="mt-1 block w-full px-3 py-1.5 text-sm border border-neutral-400 text-neutral-900 rounded-[8px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full h-[44px] px-3 py-1.5 text-sm border border-neutral-400 text-neutral-900 rounded-[8px] shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Confirm Password"
               />
               {/* <button
@@ -97,9 +97,9 @@ export default function ResetPassword() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full max-w-[300px] mx-auto flex justify-center py-2 px-4 border border-transparent rounded-[8px] shadow-sm text-sm font-medium text-white bg-[#091F8E] "
+            className="w-full max-w-[300px] h-[44px] m-auto   hover:bg-[#091F8E] hover:text-[#F8F8F8] flex justify-center py-2 px-4 border border-transparent rounded-[8px] shadow-sm text-sm font-semibold mt-[40px] text-[#94A3B8] bg-[#F1F5F9]"
           >
-            {isSubmitting ? 'Processing...' : 'Continue'}
+            {isSubmitting ? 'Processing...' : 'Reset Password'}
           </button>
         </form>
       </div>
