@@ -1,6 +1,5 @@
 'use client';
 import { ColumnDef } from '@tanstack/react-table';
-import Image, { StaticImageData } from 'next/image';
 import { ChevronsUpDown } from 'lucide-react';
 import Corey from '@/app/(dashboard)/assets/corey.svg';
 import SalesName from '@/components/DataTable/SalesName/SalesName';
@@ -18,6 +17,17 @@ type SalesData = {
   method: 'Transfer' | 'Visa' | 'Master' | 'Cash';
   amount: string;
   status: 'Pending' | 'Completed';
+};
+
+type TransactionsData = {
+  date: string;
+  time: string;
+  transId: string;
+  accountNo: string;
+  paypoint: number;
+  method: 'Transfer' | 'Visa' | 'Master' | 'Cash';
+  status: 'Completed' | 'Chargeback';
+  amount: string;
 };
 
 export const salesData: SalesData[] = [
@@ -157,5 +167,156 @@ export const salesColumn: ColumnDef<SalesData>[] = [
       <div className="whitespace-nowrap text-center font-semibold">Status</div>
     ),
     cell: ({ row }) => <TableStatus status={row.original.status} />,
+  },
+];
+
+export const transactionsData: TransactionsData[] = [
+  {
+    date: 'Oct 12, 2024',
+    time: '12:34 PM',
+    transId: '6748928879999003',
+    accountNo: '00011000',
+    paypoint: 6,
+    method: 'Visa',
+    status: 'Completed',
+    amount: '₦ 48608.70',
+  },
+  {
+    date: 'Oct 12, 2024',
+    time: '12:20 PM',
+    transId: '8598057624329743',
+    accountNo: '67612376',
+    paypoint: 4,
+    method: 'Master',
+    status: 'Completed',
+    amount: '₦ 51849.28',
+  },
+  {
+    date: 'Oct 12, 2024',
+    time: '12:14 PM',
+    transId: '80451713903781247',
+    accountNo: '02396629',
+    paypoint: 2,
+    method: 'Visa',
+    status: 'Chargeback',
+    amount: '₦ 37266.67',
+  },
+  {
+    date: 'Oct 12, 2024',
+    time: '12:01 PM',
+    transId: '39037819584578671',
+    accountNo: '93411981',
+    paypoint: 3,
+    method: 'Visa',
+    status: 'Completed',
+    amount: '₦ 64811.60',
+  },
+  {
+    date: 'Oct 12, 2024',
+    time: '11:47 AM',
+    transId: '52657487950410842',
+    accountNo: '96677229',
+    paypoint: 2,
+    method: 'Transfer',
+    status: 'Completed',
+    amount: '₦ 59950.73',
+  },
+  {
+    date: 'Oct 12, 2024',
+    time: '11:38 AM',
+    transId: '87950410362217904',
+    accountNo: '69250338',
+    paypoint: 5,
+    method: 'Master',
+    status: 'Completed',
+    amount: '₦ 38886.96',
+  },
+  {
+    date: 'Oct 12, 2024',
+    time: '11:33 AM',
+    transId: '36221790792905376',
+    accountNo: '18453860',
+    paypoint: 6,
+    method: 'Visa',
+    status: 'Completed',
+    amount: '₦ 27544.93',
+  },
+  {
+    date: 'Oct 12, 2024',
+    time: '11:27 AM',
+    transId: '79290537996524823',
+    accountNo: '35327957',
+    paypoint: 4,
+    method: 'Cash',
+    status: 'Completed',
+    amount: '₦ 56710.15',
+  },
+  {
+    date: 'Oct 12, 2024',
+    time: '11:20 AM',
+    transId: '67631440435808677',
+    accountNo: '74717812',
+    paypoint: 4,
+    method: 'Cash',
+    status: 'Completed',
+    amount: '₦ 48608.70',
+  },
+];
+
+export const transactionsColumn: ColumnDef<TransactionsData>[] = [
+  {
+    accessorKey: 'date',
+    header: () => (
+      <div className="whitespace-nowrap text-center font-semibold">
+        Date & Time
+      </div>
+    ),
+    cell: ({ row }) => (
+      <DateTime date={row.original.date} time={row.original.time} />
+    ),
+  },
+  {
+    accessorKey: 'transId',
+    header: () => (
+      <div className="whitespace-nowrap text-center font-semibold">
+        Transaction ID
+      </div>
+    ),
+  },
+  {
+    accessorKey: 'accountNo',
+    header: () => (
+      <div className="whitespace-nowrap text-center font-semibold">
+        Account No.
+      </div>
+    ),
+  },
+  {
+    accessorKey: 'paypoint',
+    header: () => (
+      <div className="whitespace-nowrap text-center font-semibold">
+        Paypoint
+      </div>
+    ),
+  },
+  {
+    accessorKey: 'method',
+    header: () => (
+      <div className="whitespace-nowrap text-center font-semibold">Method</div>
+    ),
+    cell: ({ row }) => <TableMethod method={row.original.method} />,
+  },
+  {
+    accessorKey: 'status',
+    header: () => (
+      <div className="whitespace-nowrap text-center font-semibold">Status</div>
+    ),
+    cell: ({ row }) => <TableStatus status={row.original.status} />,
+  },
+  {
+    accessorKey: 'amount',
+    header: () => (
+      <div className="whitespace-nowrap text-center font-semibold">Amount</div>
+    ),
   },
 ];
