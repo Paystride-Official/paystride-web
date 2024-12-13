@@ -34,7 +34,7 @@ export default function ResetPassword() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-custom">
       <div className="w-full max-w-[572px] h-[500px] bg-[#F1F5F9] rounded-[20px] shadow-lg px-6 md:px-20 pt-20">
-        <div className="flex justify-center ">
+        <div className="flex justify-center pb-4">
           <Image src={Paystride} alt="Logo" width={30} height={50} />
         </div>
 
