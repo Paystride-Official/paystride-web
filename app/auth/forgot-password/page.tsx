@@ -41,7 +41,7 @@ export default function ForgotPassword() {
           <ArrowLeft className="w-4 h-4 mr-1" />
           <div className="font-semibold">Back</div>
         </button>
-        <div className="flex justify-center ">
+        <div className="flex justify-center pb-4">
           <Image src={Paystride} alt="Logo" width={30} height={50} />
         </div>
 

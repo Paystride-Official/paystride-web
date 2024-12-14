@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 const page = () => {
   return (
-    <div className="w-full h-full flex justify-center items-center bg-[#F8F8F8]">
-      <div className="flex flex-col w-[50%] space-y-10">
+    <div className="w-full h-full flex justify-center bg-[#F8F8F8]">
+      <div className="flex flex-col w-[50%] space-y-10  mt-10">
         <Image
           src={successIcon}
           alt="Logo"

@@ -36,7 +36,7 @@ export default function SignupForm() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-custom  py-8">
       <div className="w-full max-w-[600px] bg-[#F8F8F8] rounded-[20px] shadow-lg px-6 md:px-20  py-16 ">
-        <div className="flex justify-center">
+        <div className="flex justify-center pb-4">
           <Image src={Paystride} alt="Logo" width={35} height={70} />
         </div>
 
