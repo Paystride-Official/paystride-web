@@ -2,6 +2,7 @@
 import { ColumnDef } from '@tanstack/react-table';
 import { ChevronsUpDown } from 'lucide-react';
 import Corey from '@/app/(dashboard)/assets/corey.svg';
+import Kaiya from '@/app/(dashboard)/assets/kaiya.jpg';
 import SalesName from '@/components/DataTable/SalesName/SalesName';
 import DateTime from '@/components/DataTable/DateTime/DateTime';
 import TableStatus from '@/components/DataTable/TableSatus/TableStatus';
@@ -44,7 +45,7 @@ export const salesData: SalesData[] = [
   },
   {
     name: 'Kaiya Batista',
-    image: Corey,
+    image: Kaiya,
     phone: '08122222222',
     date: '28 Sept 2024',
     time: '11:17 AM',
