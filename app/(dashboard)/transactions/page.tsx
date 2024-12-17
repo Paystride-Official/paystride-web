@@ -11,7 +11,7 @@ import { DatePicker } from '@/components/DataTable/DatePicker/DatePicker';
 
 const Transactions = () => {
   return (
-    <div className="py-[52px]">
+    <div className="pt-5 pb-[52px]">
       <div className="flex flex-col gap-6">
         <div className="flex flex-col lg:flex-row gap-6">
           <div className="bg-white py-6 px-5 gap-1 flex items-center justify-between border border-[#CBD5E1] rounded-[10px] flex-[1]">

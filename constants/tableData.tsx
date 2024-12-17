@@ -1,11 +1,14 @@
 'use client';
 import { ColumnDef } from '@tanstack/react-table';
-import { ChevronsUpDown } from 'lucide-react';
+import { ChevronsUpDown, MoreHorizontal, SquarePen } from 'lucide-react';
 import Corey from '@/app/(dashboard)/assets/corey.svg';
+import Kaiya from '@/app/(dashboard)/assets/kaiya.jpg';
 import SalesName from '@/components/DataTable/SalesName/SalesName';
 import DateTime from '@/components/DataTable/DateTime/DateTime';
 import TableStatus from '@/components/DataTable/TableSatus/TableStatus';
 import TableMethod from '@/components/DataTable/TableMethod/TableMethod';
+import { Button } from '@/components/ui/button';
+import EditModal from '@/app/(dashboard)/payment-point/_component/EditModal';
 
 type SalesData = {
   name: string;
@@ -30,6 +33,14 @@ type TransactionsData = {
   amount: string;
 };
 
+type PaymentpointData = {
+  paymentPoint: string;
+  onDuty: string;
+  phone: string;
+  account: string;
+  status: 'Active' | 'Inactive';
+};
+
 export const salesData: SalesData[] = [
   {
     name: 'Corey Carder',
@@ -44,7 +55,7 @@ export const salesData: SalesData[] = [
   },
   {
     name: 'Kaiya Batista',
-    image: Corey,
+    image: Kaiya,
     phone: '08122222222',
     date: '28 Sept 2024',
     time: '11:17 AM',
@@ -318,5 +329,81 @@ export const transactionsColumn: ColumnDef<TransactionsData>[] = [
     header: () => (
       <div className="whitespace-nowrap text-center font-semibold">Amount</div>
     ),
+  },
+];
+
+export const paymentpointData: PaymentpointData[] = [
+  {
+    paymentPoint: '2',
+    onDuty: 'Motunde Adegoke',
+    phone: '438-712-7475',
+    account: '000123456',
+    status: 'Active',
+  },
+  {
+    paymentPoint: '1',
+    onDuty: 'Amarachi Okoli',
+    phone: '788-806-6553',
+    account: '000579216',
+    status: 'Active',
+  },
+  {
+    paymentPoint: '3',
+    onDuty: 'None',
+    phone: '338-650-5803',
+    account: '00034889',
+    status: 'Inactive',
+  },
+  {
+    paymentPoint: '4',
+    onDuty: 'None',
+    phone: '751-346-8693',
+    account: '00034889',
+    status: 'Inactive',
+  },
+];
+
+export const paymentpointColumn: ColumnDef<PaymentpointData>[] = [
+  {
+    accessorKey: 'paymentPoint',
+    header: () => (
+      <div className="whitespace-nowrap font-semibold">Payment Point</div>
+    ),
+  },
+  {
+    accessorKey: 'onDuty',
+    header: () => (
+      <div className="whitespace-nowrap font-semibold">On-Duty</div>
+    ),
+  },
+  {
+    accessorKey: 'phone',
+    header: () => (
+      <div className="whitespace-nowrap font-semibold">Phone Number</div>
+    ),
+  },
+  {
+    accessorKey: 'account',
+    header: () => (
+      <div className="whitespace-nowrap font-semibold">Account</div>
+    ),
+  },
+  {
+    accessorKey: 'status',
+    header: () => <div className="whitespace-nowrap font-semibold">Status</div>,
+    cell: ({ row }) => <TableStatus status={row.original.status} />,
+  },
+
+  {
+    id: 'actions',
+    enableHiding: false,
+    cell: ({ row }) => {
+      return (
+        <EditModal
+          paymentPoint={row.original.paymentPoint}
+          status={row.original.status}
+        />
+      );
+    },
   },
 ];
