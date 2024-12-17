@@ -402,6 +402,7 @@ export const paymentpointColumn: ColumnDef<PaymentpointData>[] = [
         <EditModal
           paymentPoint={row.original.paymentPoint}
           status={row.original.status}
+          onDuty={row.original.onDuty}
         />
       );
     },
