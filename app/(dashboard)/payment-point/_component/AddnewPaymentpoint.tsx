@@ -24,13 +24,13 @@ const AddnewPaymentpoint = () => {
           Add New
         </button>
       </AlertDialogTrigger>
-      <AlertDialogContent className="max-w-[446px]">
+      <AlertDialogContent className="sm:w-[446px]">
         <AlertDialogHeader>
           <AlertDialogTitle>Add New Payment Point</AlertDialogTitle>
           <AlertDialogDescription>
             <form className="pt-5">
-              <section className="flex items-center justify-between gap-5 px-2">
-                <div className="flex-[2]">
+              <section className="flex items-center justify-between gap-5 min-[450px]:px-2">
+                <div className="min-[501px]:flex-[2] w-[6.1rem]">
                   <label
                     htmlFor="paymentpoint"
                     className="font-semibold text-sm text-[#475569]"
