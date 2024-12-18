@@ -1,13 +1,12 @@
 'use client';
 import { ColumnDef } from '@tanstack/react-table';
-import { ChevronsUpDown, MoreHorizontal, SquarePen } from 'lucide-react';
+import { ChevronsUpDown } from 'lucide-react';
 import Corey from '@/app/(dashboard)/assets/corey.svg';
 import Kaiya from '@/app/(dashboard)/assets/kaiya.jpg';
 import SalesName from '@/components/DataTable/SalesName/SalesName';
 import DateTime from '@/components/DataTable/DateTime/DateTime';
 import TableStatus from '@/components/DataTable/TableSatus/TableStatus';
 import TableMethod from '@/components/DataTable/TableMethod/TableMethod';
-import { Button } from '@/components/ui/button';
 import EditModal from '@/app/(dashboard)/payment-point/_component/EditModal';
 
 type SalesData = {
@@ -39,6 +38,15 @@ type PaymentpointData = {
   phone: string;
   account: string;
   status: 'Active' | 'Inactive';
+};
+
+type SettlementsData = {
+  date: string;
+  time: string;
+  transId: string;
+  accountNo: string;
+  bank: string;
+  amount: string;
 };
 
 export const salesData: SalesData[] = [
@@ -406,5 +414,104 @@ export const paymentpointColumn: ColumnDef<PaymentpointData>[] = [
         />
       );
     },
+  },
+];
+
+export const settlementsData: SettlementsData[] = [
+  {
+    date: 'Oct 12, 2024',
+    time: '12:34 PM',
+    transId: '6748928879999003',
+    accountNo: '00011000',
+    bank: 'Zenith',
+    amount: '₦20,000',
+  },
+  {
+    date: 'Oct 12, 2024',
+    time: '12:20 PM',
+    transId: '8598057624329743',
+    accountNo: '67612376',
+    bank: 'UBA',
+    amount: '₦320,000',
+  },
+  {
+    date: 'Oct 12, 2024',
+    time: '12:14 PM',
+    transId: '80451713903781247',
+    accountNo: '02396629',
+    bank: 'UBA',
+    amount: '₦120,000',
+  },
+  {
+    date: 'Oct 12, 2024',
+    time: '12:01 PM',
+    transId: '39037819584578671',
+    accountNo: '93411981',
+    bank: 'UBA',
+    amount: '₦130,000',
+  },
+  {
+    date: 'Oct 12, 2024',
+    time: '11:47 AM',
+    transId: '52657487950410842',
+    accountNo: '96677229',
+    bank: 'Zenith',
+    amount: '₦30,000',
+  },
+  {
+    date: 'Oct 12, 2024',
+    time: '11:38 AM',
+    transId: '87950410362217904',
+    accountNo: '69250338',
+    bank: 'Zenith',
+    amount: '₦50,000',
+  },
+  {
+    date: 'Oct 12, 2024',
+    time: '11:33 AM',
+    transId: '36221790792905376',
+    accountNo: '18453860',
+    bank: 'UBA',
+    amount: '₦200,000',
+  },
+  {
+    date: 'Oct 12, 2024',
+    time: '11:20 AM',
+    transId: '67631440435808677',
+    accountNo: '74717812',
+    bank: 'UBA',
+    amount: '₦150,000',
+  },
+];
+
+export const settlementsColumn: ColumnDef<SettlementsData>[] = [
+  {
+    accessorKey: 'date',
+    header: () => (
+      <div className="whitespace-nowrap font-semibold">Date & Time</div>
+    ),
+    cell: ({ row }) => (
+      <DateTime date={row.original.date} time={row.original.time} />
+    ),
+  },
+  {
+    accessorKey: 'transId',
+    header: () => (
+      <div className="whitespace-nowrap font-semibold">Transaction ID</div>
+    ),
+  },
+  {
+    accessorKey: 'accountNo',
+    header: () => (
+      <div className="whitespace-nowrap font-semibold">Account No.</div>
+    ),
+  },
+  {
+    accessorKey: 'bank',
+    header: () => <div className="whitespace-nowrap font-semibold">Bank</div>,
+  },
+  {
+    accessorKey: 'amount',
+    header: () => <div className="whitespace-nowrap font-semibold">Amount</div>,
   },
 ];
