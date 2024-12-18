@@ -3,3 +3,9 @@ export const paymentpointStaff: string[] = [
   'Amarachi Okoli',
   'Efetobore Sodje',
 ];
+
+export const primaryAccounts: string[] = [
+  '0001234578',
+  '0001234564',
+  '0001234511',
+];
