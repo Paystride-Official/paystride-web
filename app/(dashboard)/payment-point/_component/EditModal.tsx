@@ -16,10 +16,13 @@ import React, { useState } from 'react';
 type Props = {
   paymentPoint: string;
   status: 'Active' | 'Inactive';
+  onDuty: string;
 };
 
-const EditModal = ({ paymentPoint, status }: Props) => {
+const EditModal = ({ paymentPoint, status, onDuty }: Props) => {
   const [activeChoice, setActiveChoice] = useState(status);
+
+  const otherStaff = paymentpointStaff.filter((staff) => staff !== onDuty);
 
   return (
     <AlertDialog>
@@ -34,7 +37,7 @@ const EditModal = ({ paymentPoint, status }: Props) => {
               <div>
                 <label
                   htmlFor="staff"
-                  className="font-semibold text-sm text-[#475569]"
+                  className="font-semibold text-sm text-[#475569] text-start"
                 >
                   Staff
                 </label>
@@ -43,7 +46,8 @@ const EditModal = ({ paymentPoint, status }: Props) => {
                   id="staff"
                   className="w-full border border-[#94A3B8] h-9 rounded-[8px] px-[10px] text-sm outline-none"
                 >
-                  {paymentpointStaff.map((staff, index) => (
+                  <option value={onDuty}>{onDuty}</option>
+                  {otherStaff.map((staff, index) => (
                     <option key={index} value={staff} className="text-sm">
                       {staff}
                     </option>
@@ -54,7 +58,7 @@ const EditModal = ({ paymentPoint, status }: Props) => {
               <section className="my-5 flex gap-6 items-center">
                 <div
                   className={cn('flex gap-2', {
-                    '': activeChoice === 'Active',
+                    null: activeChoice === 'Active',
                   })}
                 >
                   <div
@@ -72,7 +76,7 @@ const EditModal = ({ paymentPoint, status }: Props) => {
 
                 <div
                   className={cn('flex gap-2', {
-                    '': activeChoice === 'Inactive',
+                    null: activeChoice === 'Inactive',
                   })}
                 >
                   <div

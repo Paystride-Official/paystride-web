@@ -76,7 +76,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="flex sticky top-0 max-h-screen overflow-auto w-72 flex-col bg-[#020C42] text-white">
+    <div className="hidden md:flex sticky top-0 max-h-screen overflow-auto w-72 flex-col bg-[#020C42] text-white">
       {/* Logo */}
       <div className="flex items-center px-6 py-5">
         <Image src={Paystride} alt="Paystride Logo" width={22} height={41} />
